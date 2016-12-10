@@ -1,0 +1,45 @@
+﻿@model IEnumerable <BitsandBytes.Models.Game>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>BITS AND BYTES</h1>
+    <p class="lead">Bits and Bytes is a videogames database with social features such a reviews, articles and forums</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Games</h3>
+        <form method="get">
+            <input class="form-control" type="search" name="searchTerm" />
+            <input class="btn" type="submit" value="Search by Name" />
+        </form>
+
+
+        @foreach (var item in Model)
+        {
+            <div>
+                <h4>@item.Name</h4>
+                <div>@item.Format, @item.Publisher</div>
+                @*<div>
+                    Reviews: @item.CountOfReviews
+                </div>*@
+                <hr />
+            </div>
+        }
+
+    </div>
+    <div class="col-md-4">
+        <h2>Reviews</h2>
+        <p>Feel free to browse or add to our reviews. Select the Games section above</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Discussions</h2>
+        <p>Feel free to browse or add to our reviews. Select the Discussion section above</p>
+
+    </div>
+</div>
